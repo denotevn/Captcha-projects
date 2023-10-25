@@ -26,6 +26,7 @@ import stow
 from urllib.request import urlopen
 from io import BytesIO
 from zipfile import ZipFile
+import rarfile
 
 # download and unzip data
 def download_and_unzip(url, extract_to='Datasets'):
@@ -33,10 +34,18 @@ def download_and_unzip(url, extract_to='Datasets'):
     zipfile = ZipFile(BytesIO(http_response.read()))
     zipfile.extractall(path=extract_to)
 
-dataset_path = "/home/tuandinh/Desktop/Captra_projects/Dataset"
-if not stow.exists(stow.join('Datasets', 'captcha_images_v2')):
-    download_and_unzip('https://github.com/AakashKumarNain/CaptchaCracker/raw/master/captcha_images_v2.zip', extract_to=dataset_path)
+def extract_rar_file(rar_file_name, destination_directory):
+  with rarfile  .RarFile(rar_file_name, 'r') as rar_file:
+    rar_file.extractall(destination_directory)
 
+dataset_path = "/home/tuandinh/Desktop/Captra_projects/Dataset"
+# if not stow.exists(stow.join('Datasets', 'captcha_images_v2')):
+#     download_and_unzip('https://github.com/AakashKumarNain/CaptchaCracker/raw/master/captcha_images_v2.zip', extract_to=dataset_path)
+
+rar_file_name = '/home/tuandinh/Desktop/Captra_projects/Dataset/Imgs Train and Test .rar'
+destination_directory = '/home/tuandinh/Desktop/Captra_projects/Dataset/images_captcha_42k'
+
+extract_rar_file(rar_file_name, destination_directory)
 
 # Create a list of all the images and labels in the dataset
 dataset, vocab, max_len = [], set(), 0

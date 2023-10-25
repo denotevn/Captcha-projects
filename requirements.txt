@@ -2,3 +2,7 @@ mltu==1.1.4
 stow
 tensorflow
 tf2onx
+rarfile
+label-studio
+uvicorn
+fastapi
