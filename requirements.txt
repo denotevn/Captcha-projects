@@ -6,3 +6,5 @@ rarfile
 label-studio
 uvicorn
 fastapi
+matplotlib
+pydantic
