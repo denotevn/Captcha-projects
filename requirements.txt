@@ -1,10 +1,17 @@
-mltu==1.1.4
-stow
-tensorflow
-tf2onx
-rarfile
-label-studio
-uvicorn
-fastapi
-matplotlib
-pydantic
+fastapi==0.104.0
+keras==2.11.0
+mltu==1.1.5
+numpy==1.24.3
+# numpy==1.23.4
+# numpy==1.21.5
+onnxruntime==1.16.1
+pandas==1.5.0
+Pillow==10.1.0
+# Pillow==9.0.1
+# Pillow==10.1.0
+rarfile==4.1
+starlette
+stow==1.2.2
+tensorflow==2.11.0
+tqdm==4.66.1
+uvicorn==0.23.2
